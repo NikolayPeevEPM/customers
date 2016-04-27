@@ -1,0 +1,9 @@
+<ul>
+    <li ng-repeat="order in orders | filter :{customerID:customer} : false">
+        {{order.name}} {{order.quantity}} {{order.unitPrice}} {{order.quantity * order.unitPrice}}
+        <button ng-click="deleteOrder(order)">Delete</button>
+        <a href="#/orders/edit/{{order._id.$oid}}">Edit</a>
+    </li>
+    Total: {{orderPerCustomerController.total}}
+</ul>
+

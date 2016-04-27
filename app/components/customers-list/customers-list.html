@@ -1,0 +1,18 @@
+<div>
+    <h4>Search</h4>
+    First Name: <input ng-model="filter.firstName">
+    Last Name: <input ng-model="filter.lastName">
+    City: <input ng-model="filter.city">
+    <button ng-click="filter={}">Clear Filters</button>
+    <a href="#/customers/new">New Customer</a>
+</div>
+<div>
+    <ul>
+        <li ng-repeat="customer in customers | filter : filter : false">
+            {{customer.firstName}} {{customer.lastName}} {{customer.city}}
+            <a href="#/customers/{{customer._id.$oid}}"> View {{getOrderCount(customer)}} order(s)</a>
+            <button ng-click="deleteCustomer(customer)">Delete</button>
+            <a href="#/customers/edit/{{customer._id.$oid}}">Edit</a>
+        </li>
+    </ul>
+</div>

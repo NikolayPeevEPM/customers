@@ -1,0 +1,7 @@
+Item Name:<input ng-model="order.name"><br/>
+Quantity:<input ng-model="order.quantity"><br/>
+Unit Price:<input ng-model="order.unitPrice"><br/>
+Customer:<select ng-model="order.customerID">
+    <option ng-repeat="customer in customers" value={{customer._id.$oid}}>{{customer.firstName}} {{customer.lastName}}</option>
+</select><br/>
+<button ng-click="saveOrder()">Save</button>
