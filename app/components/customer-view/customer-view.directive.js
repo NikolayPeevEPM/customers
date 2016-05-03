@@ -1,5 +1,4 @@
 angular.module('st.components.customer-view', [
-    'st.components.customer-view',
     'mongolab-factory'
 ]).directive('customerView', function (mongolabOrders,mongolabCustomers, $routeParams) {
     return {
